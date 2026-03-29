@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Gourav Sharma</title>
-<title>Senior Flutter Engineer & Plugin Developer</title>  
+<title>Gourav Sharma — Senior Flutter Engineer & Plugin Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #080c10;
@@ -24,29 +24,29 @@
     --yellow: #d29922;
     --red: #f85149;
     --purple: #a371f7;
-    --font-mono: 'JetBrains Mono', monospace;
-    --font-display: 'Syne', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-display: 'Inter', system-ui, sans-serif;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text); font-family: var(--font-mono); font-size: 14px; line-height: 1.7; overflow-x: hidden; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-display); font-size: 14px; line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
   body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(84,197,248,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(84,197,248,0.025) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
 
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 56px; background: rgba(8,12,16,0.88); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
-  .nav-logo { font-family: var(--font-display); font-weight: 800; font-size: 17px; color: var(--flutter-blue); letter-spacing: -0.5px; }
+  .nav-logo { font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--flutter-blue); letter-spacing: -0.3px; }
   .nav-logo span { color: var(--text-muted); font-weight: 400; }
   .nav-links { display: flex; gap: 28px; list-style: none; }
-  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 11.5px; letter-spacing: 0.05em; transition: color 0.2s; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
   .nav-links a:hover { color: var(--flutter-blue); }
   .nav-cta { background: var(--flutter-blue); color: #000 !important; padding: 6px 14px; border-radius: 4px; font-weight: 700; }
   .nav-cta:hover { opacity: 0.82 !important; }
 
-  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 100px 40px 60px; max-width: 1200px; margin: 0 auto; gap: 60px; }
-  .hero-left { flex: 1; z-index: 1; }
+  .hero { position: relative; min-height: 80vh; display: flex; align-items: center; padding: 120px 40px 80px; max-width: 900px; margin: 0 auto; }
+  .hero-left { flex: 1; z-index: 1; max-width: 700px; }
   .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(84,197,248,0.08); border: 1px solid rgba(84,197,248,0.25); border-radius: 20px; padding: 4px 14px; font-size: 11px; color: var(--flutter-blue); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 28px; }
   .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px var(--green); animation: pulse 2s infinite; }
   @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.4} }
-  .hero h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 62px); font-weight: 800; line-height: 1.05; letter-spacing: -2px; margin-bottom: 8px; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 62px); font-weight: 800; line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 8px; }
   .hero-title-line { font-family: var(--font-display); font-size: clamp(14px, 1.8vw, 19px); font-weight: 600; color: var(--flutter-blue); letter-spacing: 0.02em; margin-bottom: 12px; }
   .hero-location { font-size: 11.5px; color: var(--text-dim); margin-bottom: 20px; }
   .hero-desc { color: var(--text-muted); font-size: 13px; max-width: 520px; line-height: 1.85; margin-bottom: 30px; }
@@ -54,29 +54,16 @@
   .stat-num { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--flutter-blue); }
   .stat-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
   .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-  .btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 18px; border-radius: 6px; font-family: var(--font-mono); font-size: 12.5px; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
+  .btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 18px; border-radius: 6px; font-family: var(--font-display); font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
   .btn-primary { background: var(--flutter-blue); color: #000; }
   .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
   .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
   .btn-ghost:hover { border-color: var(--flutter-blue); color: var(--flutter-blue); }
 
-  .hero-right { flex: 0 0 360px; position: relative; z-index: 1; }
-  .code-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
-  .code-card-header { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); background: var(--surface2); }
-  .dot { width: 10px; height: 10px; border-radius: 50%; }
-  .dot-r{background:#ff5f57} .dot-y{background:#febc2e} .dot-g{background:#28c840}
-  .code-filename { margin-left: 8px; font-size: 11px; color: var(--text-muted); }
-  .code-body { padding: 18px 20px; font-size: 11.5px; line-height: 1.85; }
-  .kw{color:#ff7b72} .cl{color:#79c0ff} .fn{color:#d2a8ff} .st{color:#a5d6ff} .cm{color:var(--text-dim);font-style:italic} .an{color:#54aeff} .tx{color:var(--text)}
-  .code-line { display: block; }
-  .contrib-row { padding: 14px 20px; border-top: 1px solid var(--border); }
-  .contrib-label { font-size: 10px; color: var(--text-dim); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.08em; }
-  .contrib-grid { display: flex; gap: 2px; flex-wrap: wrap; }
-  .contrib-cell { width: 9px; height: 9px; border-radius: 2px; }
 
   section { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 72px 40px; }
-  .section-label { font-size: 11px; color: var(--flutter-blue); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 6px; }
-  .section-title { font-family: var(--font-display); font-size: clamp(26px, 3vw, 38px); font-weight: 800; letter-spacing: -1px; margin-bottom: 44px; }
+  .section-label { font-size: 11px; color: var(--flutter-blue); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 6px; font-family: var(--font-mono); font-weight: 500; }
+  .section-title { font-family: var(--font-display); font-size: clamp(26px, 3vw, 38px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 44px; }
   .section-title span { color: var(--flutter-blue); }
 
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
@@ -86,7 +73,7 @@
   .skill-icon { width: 30px; height: 30px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
   .skill-name { font-family: var(--font-display); font-weight: 700; font-size: 13.5px; }
   .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-  .tag { background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; font-size: 10px; color: var(--text-muted); }
+  .tag { background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; font-size: 10.5px; color: var(--text-muted); font-family: var(--font-mono); letter-spacing: 0.02em; }
   .tag-blue { border-color: rgba(84,197,248,0.3); color: var(--flutter-blue); background: rgba(84,197,248,0.06); }
   .tag-green { border-color: rgba(63,185,80,0.3); color: var(--green); background: rgba(63,185,80,0.06); }
   .tag-purple { border-color: rgba(163,113,247,0.3); color: var(--purple); background: rgba(163,113,247,0.06); }
@@ -99,7 +86,7 @@
   .plugin-item:hover::before { opacity: 1; }
   .plugin-main { flex: 1; }
   .plugin-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
-  .plugin-name { font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--flutter-sky); }
+  .plugin-name { font-family: var(--font-mono); font-weight: 500; font-size: 14.5px; color: var(--flutter-sky); letter-spacing: -0.2px; }
   .plugin-version { font-size: 10px; color: var(--text-dim); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; }
   .pub-badge { background: rgba(84,197,248,0.1); border: 1px solid rgba(84,197,248,0.3); border-radius: 4px; padding: 1px 8px; font-size: 10px; color: var(--flutter-blue); font-weight: 700; text-decoration: none; }
   .pub-badge:hover { background: rgba(84,197,248,0.2); }
@@ -166,7 +153,7 @@
 
   @media(max-width:900px){
     nav{padding:0 20px}.nav-links{display:none}
-    .hero{flex-direction:column;padding:80px 20px 40px;gap:40px}.hero-right{flex:none;width:100%}
+    .hero{padding:80px 20px 40px}
     section{padding:52px 20px}.contact-grid{grid-template-columns:1fr;gap:28px}.projects-grid{grid-template-columns:1fr}
     .plugin-item{flex-direction:column}.plugin-stats{flex-direction:row}
     .exp-grid{grid-template-columns:1fr !important}
@@ -203,44 +190,12 @@
     <div class="hero-stats fade-in">
       <div class="stat"><div class="stat-num">9+</div><div class="stat-label">Yrs Mobile</div></div>
       <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Yrs Flutter</div></div>
-      <div class="stat"><div class="stat-num">5</div><div class="stat-label">pub.dev Pkgs</div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">pub.dev Pkgs</div></div>
       <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Yrs @ Dotsquares</div></div>
     </div>
     <div class="hero-actions fade-in">
       <a href="https://github.com/Gourav-sharma" target="_blank" class="btn btn-primary">⚡ GitHub Profile</a>
-      <a href="https://pub.dev/packages?q=publisher%3Agourav-sharma" target="_blank" class="btn btn-ghost">📦 pub.dev</a>
       <a href="mailto:sharmagourav.2508@gmail.com" class="btn btn-ghost">✉ Email Me</a>
-    </div>
-  </div>
-
-  <div class="hero-right fade-in">
-    <div class="code-card">
-      <div class="code-card-header">
-        <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
-        <span class="code-filename">flutter_enterprise_cli.dart</span>
-      </div>
-      <div class="code-body">
-        <span class="code-line"><span class="cm">// Enterprise Flutter CLI — by Gourav</span></span>
-        <span class="code-line"><span class="kw">import </span><span class="st">'package:args/args.dart'</span><span class="tx">;</span></span>
-        <span class="code-line"></span>
-        <span class="code-line"><span class="kw">void </span><span class="fn">main</span><span class="tx">(List&lt;</span><span class="cl">String</span><span class="tx">&gt; args) {</span></span>
-        <span class="code-line">&nbsp;&nbsp;<span class="kw">final </span><span class="tx">parser = </span><span class="cl">ArgParser</span><span class="tx">()</span></span>
-        <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tx">..</span><span class="fn">addCommand</span><span class="tx">(</span><span class="st">'create'</span><span class="tx">)&nbsp;<span class="cm">// scaffold project</span></span></span>
-        <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tx">..</span><span class="fn">addCommand</span><span class="tx">(</span><span class="st">'page'</span><span class="tx">)&nbsp;&nbsp;&nbsp;<span class="cm">// gen bloc page</span></span></span>
-        <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tx">..</span><span class="fn">addCommand</span><span class="tx">(</span><span class="st">'ci'</span><span class="tx">)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cm">// github actions</span></span></span>
-        <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tx">..</span><span class="fn">addCommand</span><span class="tx">(</span><span class="st">'flavors'</span><span class="tx">);</span></span>
-        <span class="code-line">&nbsp;&nbsp;<span class="kw">final </span><span class="tx">result = parser.</span><span class="fn">parse</span><span class="tx">(args);</span></span>
-        <span class="code-line">&nbsp;&nbsp;<span class="kw">switch </span><span class="tx">(result.command?.name) {</span></span>
-        <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">case </span><span class="st">'create'</span><span class="tx">: </span><span class="fn">scaffoldProject</span><span class="tx">(result);</span></span>
-        <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">case </span><span class="st">'ci'</span><span class="tx">:&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="fn">setupGithubActions</span><span class="tx">();</span></span>
-        <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">case </span><span class="st">'page'</span><span class="tx">:  </span><span class="fn">generateBlocPage</span><span class="tx">(result);</span></span>
-        <span class="code-line">&nbsp;&nbsp;<span class="tx">}</span></span>
-        <span class="code-line"><span class="tx">}</span></span>
-      </div>
-      <div class="contrib-row">
-        <div class="contrib-label">GitHub Contributions — 2024</div>
-        <div class="contrib-grid" id="contrib-grid"></div>
-      </div>
     </div>
   </div>
 </div>
@@ -341,6 +296,21 @@
         <div class="plugin-desc">Simplifies in-app subscription handling across Android and iOS. Abstracts Google Play Billing and Apple StoreKit complexity into a single, clean Dart API for subscription management.</div>
         <div class="skill-tags"><span class="tag tag-yellow">In-App Purchase</span><span class="tag tag-yellow">Google Play Billing</span><span class="tag tag-yellow">StoreKit</span><span class="tag tag-blue">Android</span><span class="tag tag-blue">iOS</span></div>
       </div>
+    </div>
+
+    <div class="plugin-item">
+      <div class="plugin-main">
+        <div class="plugin-header">
+          <div class="plugin-name">fire_pilot</div>
+          <span class="plugin-version">v1.0.1 · published 25h ago</span>
+          <a class="pub-badge" href="https://pub.dev/packages/fire_pilot" target="_blank">pub.dev ↗</a>
+          <a class="gh-badge" href="https://github.com/Gourav-sharma/fire_pilot" target="_blank">GitHub ↗</a>
+        </div>
+        <div class="plugin-desc">Elite Firebase setup orchestrator for Flutter — automates the entire Firebase integration flow including Node.js/NPM installation, multi-account Google login, project creation, FlutterFire configuration, SHA-1/SHA-256 key registration, and dependency setup. One command replaces hours of manual Firebase setup steps.</div>
+        <div class="skill-tags"><span class="tag tag-blue">Dart CLI</span><span class="tag tag-blue">Firebase</span><span class="tag tag-yellow">FlutterFire</span><span class="tag tag-green">Windows</span><span class="tag tag-green">macOS</span><span class="tag tag-green">Linux</span><span class="tag tag-purple">Multi-Account</span><span class="tag tag-green">SHA Keys</span></div>
+        <div class="plugin-meta"><span>🏆 160 pub points</span><span>MIT License</span><span style="color:var(--flutter-blue)">Published 25h ago</span></div>
+      </div>
+      <div class="plugin-stats"><div class="p-stat"><strong>0</strong><span>likes</span></div><div class="p-stat"><strong>160</strong><span>points</span></div></div>
     </div>
 
     <div class="plugin-item">
@@ -478,29 +448,6 @@
     </div>
 
     <div>
-      <div style="margin-bottom:24px">
-        <div class="section-label" style="margin-bottom:14px">// open source highlights</div>
-        <div class="oss-card">
-          <div class="oss-name">flutter_enterprise_cli — v2.0.2</div>
-          <div class="oss-desc">Enterprise project scaffolding CLI — clean architecture, flavors, CI/CD, BLoC/Riverpod, API testing, GoRouter. 702 downloads · 140 pub points.</div>
-          <div><span class="tag tag-blue">Dart CLI</span><span class="tag tag-yellow">CI/CD</span><span class="tag tag-green">Cross-platform</span></div>
-        </div>
-        <div class="oss-card">
-          <div class="oss-name">flutter_project_upgrader — v0.0.6</div>
-          <div class="oss-desc">Automates upgrading legacy Flutter projects — Gradle, AGP, Kotlin, Podfile, Swift, CocoaPods. 150 pub points.</div>
-          <div><span class="tag tag-green">Tooling</span><span class="tag tag-blue">Android / iOS</span></div>
-        </div>
-        <div class="oss-card">
-          <div class="oss-name">image_picker_bundle — v0.0.3</div>
-          <div class="oss-desc">Flutter plugin for gallery/camera image &amp; video picking with multi-select, recording, federated plugin architecture. 150 pub points.</div>
-          <div><span class="tag tag-blue">Flutter Plugin</span><span class="tag tag-blue">Android / iOS</span></div>
-        </div>
-        <div class="oss-card">
-          <div class="oss-name">in_app_subscription_bundle &amp; image_crop_bundle</div>
-          <div class="oss-desc">In-app subscription handling (Google Play + StoreKit) and lightweight image cropping widget with aspect ratio &amp; rotation control.</div>
-          <div><span class="tag tag-yellow">IAP</span><span class="tag tag-green">Image Crop</span><span class="tag tag-blue">Flutter</span></div>
-        </div>
-      </div>
 
       <div>
         <div class="section-label" style="margin-bottom:14px">// education</div>
@@ -528,10 +475,10 @@
       <p style="color:var(--text-muted);font-size:13px;line-height:1.85;max-width:430px;margin-bottom:26px">
         Open to senior Flutter engineering roles, Flutter package consulting, and cross-platform mobile projects. 9+ years of mobile expertise — from native Android (Java/Kotlin) to modern Flutter. Based in Jaipur, India.
       </p>
-      <div class="contact-item"><div class="contact-icon">📧</div><a href="mailto:sharmagourav.2508@gmail.com">sharmagourav.2508@gmail.com</a></div>
+      <div class="contact-item"><div class="contact-icon">📧</div><a href="/cdn-cgi/l/email-protection#90e3f8f1e2fdf1f7ffe5e2f1e6bea2a5a0a8d0f7fdf1f9fcbef3fffd"><span class="__cf_email__" data-cfemail="daa9b2bba8b7bbbdb5afa8bbacf4e8efeae29abdb7bbb3b6f4b9b5b7">[email&#160;protected]</span></a></div>
       <div class="contact-item"><div class="contact-icon">📞</div><span>+91-8387022400 &nbsp;/&nbsp; +91-7014437800</span></div>
       <div class="contact-item"><div class="contact-icon">🐙</div><a href="https://github.com/Gourav-sharma" target="_blank">github.com/Gourav-sharma</a></div>
-      <div class="contact-item"><div class="contact-icon">📦</div><a href="https://pub.dev/packages?q=publisher%3Agourav-sharma" target="_blank">pub.dev packages (5 published)</a></div>
+      <div class="contact-item"><div class="contact-icon">📦</div><a href="https://pub.dev/packages?q=publisher%3Agourav-sharma" target="_blank">pub.dev packages (6 published)</a></div>
       <div class="contact-item"><div class="contact-icon">📍</div><span>Jaipur, Rajasthan, India</span></div>
     </div>
 
@@ -548,7 +495,7 @@
         <div style="display:flex;align-items:center;gap:10px;font-size:12.5px"><span style="color:var(--yellow)">◐</span>Open Source Collaboration</div>
       </div>
       <div style="margin-top:24px;display:flex;gap:10px">
-        <a href="mailto:sharmagourav.2508@gmail.com" class="btn btn-primary" style="flex:1;justify-content:center">✉ Email Gourav</a>
+        <a href="/cdn-cgi/l/email-protection#9ae9f2fbe8f7fbfdf5efe8fbecb4a8afaaa2dafdf7fbf3f6b4f9f5f7"><span class="__cf_email__" data-cfemail="fc8f949d8e919d9b93898e9d8ad2cec9ccc4bc9b919d9590d29f9391">[email&#160;protected]</span></a>
         <a href="https://github.com/Gourav-sharma" target="_blank" class="btn btn-ghost" style="flex:1;justify-content:center">⚡ GitHub</a>
       </div>
     </div>
@@ -557,30 +504,5 @@
 
 <footer>
   <p>Built with ❤️ — <a href="https://github.com/Gourav-sharma" target="_blank">Gourav Sharma</a> · Senior Flutter Engineer · Jaipur, India · 2025</p>
-  <p style="margin-top:5px">© 2025 Gourav Sharma &nbsp;·&nbsp; <a href="mailto:sharmagourav.2508@gmail.com">sharmagourav.2508@gmail.com</a> &nbsp;·&nbsp; +91-8387022400</p>
-</footer>
-
-<script>
-  const grid = document.getElementById('contrib-grid');
-  const levels = [0,0,0,0,1,1,1,2,2,3,3,4];
-  const colors = ['#161b22','#0e4429','#006d32','#26a641','#39d353'];
-  for (let i = 0; i < 52 * 7; i++) {
-    const cell = document.createElement('div');
-    cell.className = 'contrib-cell';
-    const lvl = levels[Math.floor(Math.random() * levels.length)];
-    cell.style.background = colors[lvl];
-    if (lvl > 0) cell.style.boxShadow = `0 0 ${lvl * 2}px ${colors[lvl]}55`;
-    grid.appendChild(cell);
-  }
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; observer.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.skill-card,.project-card,.plugin-item,.timeline-item,.oss-card').forEach((el, i) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(18px)';
-    el.style.transition = `opacity 0.5s ease ${(i%4)*0.07}s, transform 0.5s ease ${(i%4)*0.07}s`;
-    observer.observe(el);
-  });
-</script>
-</body>
-</html>
+  <p style="margin-top:5px">© 2025 Gourav Sharma &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#f1829990839c90969e84839087dfc3c4c1c9b1969c90989ddf929e9c"><span class="__cf_email__" data-cfemail="d1a2b9b0a3bcb0b6bea4a3b0a7ffe3e4e1e991b6bcb0b8bdffb2bebc">[email&#160;protected]</span></a> &nbsp;·&nbsp; +91-8387022400</p>
+</f
